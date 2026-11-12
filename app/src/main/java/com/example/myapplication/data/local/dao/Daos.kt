@@ -1,11 +1,10 @@
 package com.example.myapplication.data.local.dao
-
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import br.com.grupo.sudoku.data.local.entity.PuzzleEntity
+import com.example.myaplication.data.local.entity.PuzzleEntity
 import kotlinx.coroutines.flow.Flow
 @Dao
 interface PuzzleDao {

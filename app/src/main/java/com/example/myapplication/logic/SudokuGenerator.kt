@@ -1,7 +1,6 @@
 package com.example.myapplication.logic
 
 import kotlin.random.Random
-
 data class GeneratedPuzzle(val puzzle: List<Int>, val solution: List<Int>)
 object SudokuGenerator {
     fun generate(difficulty: Difficulty, random: Random = Random.Default):

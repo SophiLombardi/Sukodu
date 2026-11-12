@@ -1,9 +1,10 @@
 package com.grupo.sudoku.ui.game
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.grupo.sudoku.logic.Difficulty
-import br.com.grupo.sudoku.logic.SudokuGenerator
-import br.com.grupo.sudoku.logic.SudokuValidator
+import com.example.myapplication.logic.Difficulty
+import com.example.myapplication.logic.SudokuGenerator
+import com.example.myapplication.logic.SudokuValidator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +12,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
 enum class GameStatus { LOADING, PLAYING, WON }
 data class GameUiState(
     val status: GameStatus = GameStatus.LOADING,
@@ -47,8 +47,6 @@ class GameViewModel : ViewModel() {
                 difficulty = difficulty,
                 board = generated.puzzle,
                 fixedCells = generated.puzzle.indices.filter {
-                    Sudoku MVVM — Roteiro de Commits, Etapa 1
-                    Page 14 of 32
                     generated.puzzle[it] != 0 }.toSet()
             )
         }
@@ -86,8 +84,7 @@ class GameViewModel : ViewModel() {
             return
         _uiState.update {
             it.copy(
-                board = it.board.toMutableList().also { board -> board[index]
-                    = 0 },
+                board = it.board.toMutableList().also { board -> board[index] = 0 },
                 wrongCells = it.wrongCells - index
 
             )

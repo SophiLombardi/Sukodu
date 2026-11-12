@@ -18,8 +18,7 @@ object SudokuValidator {
         for (r in boxRow until boxRow + 3) {
             for (c in boxCol until boxCol + 3) {
                 val boxIndex = r * SIZE + c
-                if (boxIndex != index && board[boxIndex] == value) return
-                false
+                if (boxIndex != index && board[boxIndex] == value) return false
             }
         }
         return true

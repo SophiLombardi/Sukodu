@@ -1,4 +1,4 @@
-package com.grupo.myapplication.logic
+package com.example.myapplication.logic
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -30,6 +30,7 @@ class SudokuLogicTest {
         assertFalse(SudokuValidator.canPlace(board, 72, 5))
         assertFalse(SudokuValidator.canPlace(board, 20, 5))
         assertTrue(SudokuValidator.canPlace(board, 40, 5))
+
     }
     @Test
     fun conversaoDeTextoIdaEVolta() {

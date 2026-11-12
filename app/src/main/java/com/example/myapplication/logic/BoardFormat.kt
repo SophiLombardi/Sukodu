@@ -1,4 +1,5 @@
 package com.example.myapplication.logic
+
 object BoardFormat {
     fun toText(board: List<Int>): String = board.joinToString(separator = "")
     fun fromText(text: String): List<Int> = text.map { it.digitToIntOrNull()

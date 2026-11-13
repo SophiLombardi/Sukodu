@@ -1,9 +1,9 @@
-package com.example.myapplication.ui.puzzle
+package com.example.myaplication.ui.puzzle
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import com.example.myapplication.logic.Difficulty
+import com.example.myaplication.logic.Difficulty
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height

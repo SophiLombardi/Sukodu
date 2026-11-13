@@ -1,10 +1,10 @@
-package com.grupo.sudoku.ui.game
+package com.example.myaplication.ui.game
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.logic.Difficulty
-import com.example.myapplication.logic.SudokuGenerator
-import com.example.myapplication.logic.SudokuValidator
+import com.example.myaplication.logic.Difficulty
+import com.example.myaplication.logic.SudokuGenerator
+import com.example.myaplication.logic.SudokuValidator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,11 +1,11 @@
-package com.example.myapplication.data.local
+package com.example.myaplication.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.myapplication.data.local.dao.PuzzleDao
-import com.example.myapplication.data.local.entity.PuzzleEntity
+import com.example.myaplication.data.local.dao.PuzzleDao
+import com.example.myaplication.data.local.entity.PuzzleEntity
 
 @Database(
     entities = [PuzzleEntity::class],

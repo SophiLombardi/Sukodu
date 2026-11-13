@@ -1,4 +1,4 @@
-package com.example.myapplication.logic
+package com.example.myaplication.logic
 
 object BoardFormat {
     fun toText(board: List<Int>): String = board.joinToString(separator = "")

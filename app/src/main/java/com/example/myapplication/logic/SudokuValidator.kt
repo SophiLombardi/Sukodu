@@ -1,4 +1,4 @@
-package com.example.myapplication.logic
+package com.example.myaplication.logic
 
 object SudokuValidator {
     const val SIZE = 9

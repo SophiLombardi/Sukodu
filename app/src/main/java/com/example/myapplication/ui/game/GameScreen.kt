@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.game
+package com.example.myaplication.ui.game
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,9 +32,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.myapplication.logic.Difficulty
-import com.grupo.sudoku.ui.game.GameStatus
-import com.grupo.sudoku.ui.game.GameViewModel
+import com.example.myaplication.logic.Difficulty
+import com.example.myaplication.ui.game.SudokuBoard
+import com.example.myaplication.ui.game.GameViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

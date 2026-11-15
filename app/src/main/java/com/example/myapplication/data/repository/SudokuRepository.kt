@@ -73,48 +73,7 @@ class SudokuRepository(
         } catch (e: Exception) {
             RepositoryResult.Error("Erro ao excluir puzzle: ${e.message}")
         }
-    suspend fun importPuzzlesFromApi(quantity: Int): RepositoryResult<Int> {
-        return try {
-            val newPuzzles = mutableListOf<PuzzleEntity>()
-            repeat(quantity) {
-                val response = api.getNewBoard()
-                response.newboard?.grids.orEmpty().forEach { grid ->
-                    val givens = grid.value.orEmpty().flatten()
-                    val solution = grid.solution.orEmpty().flatten()
-                    if (SudokuValidator.isValidSolution(solution) &&
-                        SudokuValidator.puzzleMatchesSolution(givens,
-                            solution)
-                    ) {
-                        val difficulty = Difficulty.fromApi(grid.difficulty)
-                        newPuzzles.add(
-                            PuzzleEntity(
-                                name = "API ${difficulty.label}
-                                ${System.currentTimeMillis() % 10000}",
-                                    difficulty = difficulty.name,
-                            givens = BoardFormat.toText(givens),
-                            solution = BoardFormat.toText(solution),
-                            source = "API"
-                        )
-                        )
-                    }
-                }
-            }
-            if (newPuzzles.isEmpty()) {
-                RepositoryResult.Error("A API respondeu, mas não enviou puzzles válidos.")
-            } else {
-                puzzleDao.insertAll(newPuzzles)
-                RepositoryResult.Success(newPuzzles.size)
-            }
-        } catch (e: IOException) {
-            RepositoryResult.Error("Sem conexão com a internet. Tente novamente.")
-        } catch (e: HttpException) {
-            RepositoryResult.Error("O servidor respondeu com erro
-                ${e.code()}.")
-        } catch (e: Exception) {
-            RepositoryResult.Error("Erro inesperado ao importar:
-                ${e.message}")
-        }
-    }
+
     suspend fun ensureInitialPuzzles(): RepositoryResult<Unit> = try {
         if (puzzleDao.count() == 0) {
             Difficulty.entries.forEach { difficulty ->

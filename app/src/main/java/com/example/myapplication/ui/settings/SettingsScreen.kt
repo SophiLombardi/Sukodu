@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.settings
+package com.example.myaplication.ui.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

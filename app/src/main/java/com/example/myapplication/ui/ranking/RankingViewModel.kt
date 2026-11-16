@@ -2,11 +2,11 @@ package com.example.myaplication.ui.ranking
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myaplication.data.local.entity.ScoreEntity
 import com.example.myaplication.data.repository.RepositoryResult
 import com.example.myaplication.data.repository.SudokuRepository
 import com.example.myaplication.logic.BoardFormat
 import com.example.myaplication.logic.Difficulty
+import com.example.myapplication.data.local.entity.ScoreEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

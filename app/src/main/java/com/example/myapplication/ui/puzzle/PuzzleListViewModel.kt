@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.puzzle
+package com.example.myaplication.ui.puzzle
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

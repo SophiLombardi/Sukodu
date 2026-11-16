@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -106,7 +105,7 @@ fun AdminScreen(
                 verticalArrangement = Arrangement.spacedBy(8.dp),
                 contentPadding = PaddingValues(bottom = 16.dp)
             ) {
-                items(uiState.puzzles, key = { it.id }) { puzzle ->
+                items(uiState.puzzle, key = { it.id }) { puzzle ->
                     Card(modifier = Modifier.fillMaxWidth()) {
                         Row(
                             modifier = Modifier.padding(start = 16.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),

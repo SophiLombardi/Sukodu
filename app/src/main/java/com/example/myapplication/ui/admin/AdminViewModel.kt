@@ -2,10 +2,10 @@ package com.example.myaplication.ui.admin
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myaplication.data.local.entity.PuzzleEntity
 import com.example.myaplication.data.repository.RepositoryResult
 import com.example.myaplication.data.repository.SudokuRepository
 import com.example.myaplication.logic.Difficulty
+import com.example.myapplication.data.local.entity.PuzzleEntity
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

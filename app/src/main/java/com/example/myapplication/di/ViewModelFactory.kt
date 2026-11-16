@@ -10,6 +10,7 @@ import com.example.myaplication.ui.login.LoginViewModel
 import com.example.myaplication.ui.puzzle.PuzzleListViewModel
 import com.example.myaplication.ui.ranking.RankingViewModel
 import com.example.myaplication.ui.settings.SettingsViewModel
+import kotlin.jvm.java
 
 class ViewModelFactory(
     private val repository: SudokuRepository

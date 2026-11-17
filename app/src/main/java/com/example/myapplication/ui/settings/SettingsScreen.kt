@@ -96,17 +96,17 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
 }
 
 @Composable
-fun MessageBanner(x0: String, isError: Boolean, onDismiss: KFunction0<Unit>) {
+fun MessageBanner(x0: String, isError: Boolean, onDismiss: Function0<Unit>) {
     TODO("Not yet implemented")
 }
 }
 
 @Composable
-fun MessageBanner(x0: String, isError: Boolean, onDismiss: KFunction0<Unit>) {
+fun MessageBanner(x0: String, isError: Boolean, onDismiss: Function0<Unit>) {
     TODO("Not yet implemented")
 }
 
 @Composable
-fun DifficultyFilter(selected: Difficulty?, onSelect: KFunction1<Difficulty?, Unit>) {
+fun DifficultyFilter(selected: Difficulty?, onSelect: Function1<Difficulty?, Unit>) {
     TODO("Not yet implemented")
 }

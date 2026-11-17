@@ -10,6 +10,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+private const val ADMIN_USER = "admin"
+private const val ADMIN_PASSWORD = "1234"
+
 data class LoginUiState(
     val isAdminMode: Boolean = false,
     val name: String = "",

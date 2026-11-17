@@ -2,7 +2,7 @@
 
 > Aplicativo mobile de Sudoku desenvolvido em Kotlin para Android. O projeto tem como objetivo proporcionar uma experiência interativa por meio de um dos jogos de raciocínio lógico mais conhecidos, estimulando o pensamento estratégico, a concentração e a resolução de problemas.
 
-\<p align="left">   \<img src="[https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)" />   \<img src="[https://img.shields.io/badge/Kotlin-100%25-purple](https://img.shields.io/badge/Kotlin-100%25-purple)" />   \<img src="[https://img.shields.io/badge/Plataforma-Android-green](https://img.shields.io/badge/Plataforma-Android-green)" />   \<img src="[https://img.shields.io/badge/Build-Gradle-blue](https://img.shields.io/badge/Build-Gradle-blue)" /> \</p>
+<p align="left">   <img src="[https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)" />   <img src="[https://img.shields.io/badge/Kotlin-100%25-purple](https://img.shields.io/badge/Kotlin-100%25-purple)" />   <img src="[https://img.shields.io/badge/Plataforma-Android-green](https://img.shields.io/badge/Plataforma-Android-green)" />   <img src="[https://img.shields.io/badge/Build-Gradle-blue](https://img.shields.io/badge/Build-Gradle-blue)" /> </p>
 
 ---
 
@@ -195,7 +195,10 @@ Projeto desenvolvido em equipe pelos seguintes integrantes:
 
 ---
 
-\<p align="center">
+## 🛸 Evidência
+https://drive.google.com/file/d/1mJqJpYTTFs9GDqpo3VmWcLJutFiMIeJv/view?usp=drive_link
+
+<p align="center">
 &#x20; Desenvolvido com 💜 utilizando Kotlin e Android Studio.
-\</p>
+</p>
 

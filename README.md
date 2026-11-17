@@ -111,27 +111,73 @@ gradlew.bat assembleDebug
 ## 📁 Estrutura do projeto
 
 ```text
-Sukodu/
+myapplication/
 │
-├── app/
-│   └── Código-fonte do aplicativo Android
+├── data/
+│   ├── local/
+│   │   ├── dao/
+│   │   │   └── Daos.kt
+│   │   ├── entity/
+│   │   │   └── Entities.kt
+│   │   └── SudokuDatabase.kt
+│   │
+│   ├── remote/
+│   │   ├── dto/
+│   │   │   └── DosukuResponse.kt
+│   │   └── SudokuApi.kt
+│   │
+│   └── repository/
+│       └── SudokuRepository.kt
 │
-├── gradle/
-│   └── Configurações do Gradle Wrapper
+├── di/
+│   ├── AppContainer.kt
+│   └── ViewModelFactory.kt
 │
-├── .gitignore
+├── logic/
+│   ├── BoardFormat.kt
+│   ├── Difficulty.kt
+│   ├── ScoreCalculator.kt
+│   ├── SudokuGenerator.kt
+│   └── SudokuValidator.kt
 │
-├── build.gradle.kts
+├── ui/
+│   ├── admin/
+│   │   ├── AdminScreen.kt
+│   │   ├── AdminViewModel.kt
+│   │   ├── PuzzleEditScreen.kt
+│   │   └── PuzzleEditViewModel.kt
+│   │
+│   ├── components/
+│   │   └── CommonComponents.kt
+│   │
+│   ├── game/
+│   │   ├── GameScreen.kt
+│   │   ├── GameViewModel.kt
+│   │   └── SudokuBoard.kt
+│   │
+│   ├── login/
+│   │   ├── LoginScreen.kt
+│   │   └── LoginViewModel.kt
+│   │
+│   ├── navigation/
+│   │   └── AppNavigation.kt
+│   │
+│   ├── puzzle/
+│   │   ├── PuzzleListScreen.kt
+│   │   └── PuzzleListViewModel.kt
+│   │
+│   ├── ranking/
+│   │   ├── RankingScreen.kt
+│   │   └── RankingViewModel.kt
+│   │
+│   ├── settings/
+│   │   ├── SettingsScreen.kt
+│   │   └── SettingsViewModel.kt
+│   │
+│   └── theme/
+│       └── Theme.kt
 │
-├── gradle.properties
-│
-├── gradlew
-│
-├── gradlew.bat
-│
-├── settings.gradle.kts
-│
-└── README.md
+└── MainActivity.kt
 ```
 
 ---

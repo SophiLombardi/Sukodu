@@ -29,84 +29,103 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.myaplication.logic.Difficulty
+import com.example.myaplication.ui.components.DifficultyFilter
+import com.example.myaplication.ui.components.MessageBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    Scaffold(topBar = { TopAppBar(title = { Text("Configurações") }) }) {
-            padding ->
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Configurações") }) }
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                .padding(innerPadding)
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            uiState.errorMessage?.let { MessageBanner(it, isError = true,
-                onDismiss = viewModel::dismissError) }
+            uiState.errorMessage?.let {
+                MessageBanner(
+                    message = it,
+                    isError = true,
+                    onDismiss = viewModel::dismissError
+                )
+            }
+
             Card(modifier = Modifier.fillMaxWidth()) {
-                Row(modifier = Modifier.padding(16.dp), verticalAlignment =
-                    Alignment.CenterVertically) {
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Icon(Icons.Filled.Person, contentDescription = null)
                     Column(modifier = Modifier.padding(start = 12.dp)) {
                         Text(uiState.userName, fontWeight = FontWeight.Bold)
-                        Text(if (uiState.isAdmin) "Perfil: Administrador"
-                        else "Perfil: Jogador")
+                        Text(
+                            if (uiState.isAdmin) "Perfil: Administrador"
+                            else "Perfil: Jogador"
+                        )
                     }
                 }
             }
-            Text("Limite de erros por partida", style =
-                MaterialTheme.typography.titleMedium)
+
+            Text(
+                "Limite de erros por partida",
+                style = MaterialTheme.typography.titleMedium
+            )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(3 to "3 erros", 5 to "5 erros", 0 to "Sem limite").forEach { (value, label) ->
+                listOf(3 to "3 erros", 5 to "5 erros", 0 to "Sem limite")
+                    .forEach { (value, label) ->
                         FilterChip(
-                        selected = uiState.maxErrors == value,
-                onClick = { viewModel.onMaxErrorsChange(value) },
-                label = { Text(label) }
+                            selected = uiState.maxErrors == value,
+                            onClick = { viewModel.onMaxErrorsChange(value) },
+                            label = { Text(label) }
+                        )
+                    }
+            }
+
+            HorizontalDivider()
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        "Destacar erros em vermelho",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        "Mostra na hora quando um número está errado",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+                Switch(
+                    checked = uiState.showErrors,
+                    onCheckedChange = viewModel::onShowErrorsChange
                 )
             }
-        }
-        HorizontalDivider()
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text("Destacar erros em vermelho", style =
-                    MaterialTheme.typography.titleMedium)
-                Text("Mostra na hora quando um número está errado", style
-                = MaterialTheme.typography.bodySmall)
+
+            HorizontalDivider()
+
+            Text(
+                "Dificuldade padrão na lista",
+                style = MaterialTheme.typography.titleMedium
+            )
+            DifficultyFilter(
+                selected = uiState.defaultDifficulty,
+                onSelect = viewModel::onDefaultDifficultyChange
+            )
+
+            HorizontalDivider()
+
+            OutlinedButton(
+                onClick = viewModel::logout,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = null)
+                Text(" Sair / Trocar usuário")
             }
-            Switch(checked = uiState.showErrors, onCheckedChange =
-                viewModel::onShowErrorsChange)
-        }
-        HorizontalDivider()
-        Text("Dificuldade padrão na lista", style =
-            MaterialTheme.typography.titleMedium)
-        DifficultyFilter(selected = uiState.defaultDifficulty, onSelect =
-            viewModel::onDefaultDifficultyChange)
-        HorizontalDivider()
-        OutlinedButton(onClick = viewModel::logout, modifier =
-            Modifier.fillMaxWidth()) {
-            Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription
-            = null)
-            Text(" Sair / Trocar usuário")
         }
     }
-}
-
-@Composable
-fun MessageBanner(x0: String, isError: Boolean, onDismiss: Function0<Unit>) {
-    TODO("Not yet implemented")
-}
-}
-
-@Composable
-fun MessageBanner(x0: String, isError: Boolean, onDismiss: Function0<Unit>) {
-    TODO("Not yet implemented")
-}
-
-@Composable
-fun DifficultyFilter(selected: Difficulty?, onSelect: Function1<Difficulty?, Unit>) {
-    TODO("Not yet implemented")
 }

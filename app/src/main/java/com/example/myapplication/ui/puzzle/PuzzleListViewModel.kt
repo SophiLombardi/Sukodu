@@ -104,6 +104,19 @@ class PuzzleListViewModel(private val repository: SudokuRepository) : ViewModel(
         }
     }
 
+    fun onFilterChange(difficulty: Difficulty?) {
+        filters.update { it.copy(difficulty = difficulty) }
+        _uiState.update { it.copy(filter = difficulty) }
+    }
+
+    fun onSortChange(sort: PuzzleSort) {
+        filters.update { it.copy(sort = sort) }
+        _uiState.update { it.copy(sort = sort) }
+    }
+
+    fun dismissError() {
+        _uiState.update { it.copy(errorMessage = null) }
+    }
     fun onSearchChange(text: String) {
         filters.update { it.copy(search = text) }
         _uiState.update { it.copy(search = text) }

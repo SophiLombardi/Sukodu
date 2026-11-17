@@ -27,8 +27,8 @@ class SettingsViewModel(private val repository: SudokuRepository) : ViewModel() 
     val uiState: StateFlow<SettingsUiState> = _uiState.asStateFlow()
     init {
         viewModelScope.launch {
-            repository.collect { session -> _uiState.update { it.copy(userName = session?.name.orEmpty(),
-                    isAdmin = session?.isAdmin == true) }
+            repository.session.collect { session -> _uiState.update { it.copy(userName = session?.name.orEmpty(),
+                isAdmin = session?.isAdmin == true) }
             }
         }
         viewModelScope.launch {
